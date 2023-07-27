@@ -1,0 +1,16 @@
+<h1>Liste des films</h1>
+<div>
+    <ul>
+        <li *ngFor="let f of tabFilms; let index= index">
+            <span class="stylenom text-success"> {{ f.nom }}</span><br>
+            <button (click)="affiche(f)" [ngClass]="{'boutonh':f.descVisible===true,
+            'boutonv':f.descVisible===false}"class="btn btn-info">
+              plus d'info</button><br>
+              <button (click)="cacher(f)" [ngClass]="{'boutonh':f.descVisible===false,
+            'boutonv':f.descVisible===true}"class="btn btn-info">
+              moins d'info</button><br>
+              <div  *ngIf="f.descVisible" class="bloc">{{ f.description }} </div>
+
+        </li>
+    </ul>
+</div>
